@@ -30,12 +30,12 @@
     <script>(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
     <link href="/static/favicon-32x32.png" rel="icon" />
-    <link href="/resources/css/retype.css?v=1.11.2.697113554596" rel="stylesheet" data-turbo-track="reload" />
+    <link href="/resources/css/retype.css?v=1.11.2.698936700015" rel="stylesheet" data-turbo-track="reload" />
 
-    <script type="text/javascript" src="/resources/js/config.js?v=1.11.2.697113554596" defer data-turbo-track="reload"></script>
+    <script type="text/javascript" src="/resources/js/config.js?v=1.11.2.698936700015" defer data-turbo-track="reload"></script>
     <script type="text/javascript" src="/resources/js/retype.js?v=1.11.2" defer data-turbo-track="reload"></script>
-    <script id="lunr-js" type="text/javascript" src="/resources/js/lunr.js?v=1.11.2.697113554596" defer></script>
-    <script id="prism-js" type="text/javascript" src="/resources/js/prism.js?v=1.11.2.697113554596" defer></script>
+    <script id="lunr-js" type="text/javascript" src="/resources/js/lunr.js?v=1.11.2.698936700015" defer></script>
+    <script id="prism-js" type="text/javascript" src="/resources/js/prism.js?v=1.11.2.698936700015" defer></script>
 </head>
     <body>
         <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -451,7 +451,7 @@ of the commit. One node has failed because failed validation (IOSXRN).</p>
                     &quot;node-id&quot;: &quot;IOSXRN&quot;,
                     &quot;configuration-status&quot;: &quot;fail&quot;,
                     &quot;error-message&quot;: &quot;RemoteDevice{IOSXRN}: Validate failed. illegal reference /orgs/org[name='TESTING-PROVIDER']/traffic-identification/using-networks\n&quot;,
-                    &quot;error-type&quot;: &quot;processing-error&quot;,
+                    &quot;error-type&quot;: &quot;uniconfig-error&quot;,
                     &quot;rollback-status&quot;: &quot;complete&quot;
                 },
                 {
@@ -497,7 +497,7 @@ of the commit. One node has failed because the confirmed commit failed
                     &quot;node-id&quot;: &quot;IOSXRN&quot;,
                     &quot;configuration-status&quot;: &quot;fail&quot;,
                     &quot;error-message&quot;: &quot;RemoteDevice{IOSXRN}: Confirmed commit failed. illegal reference /orgs/org[name='TESTING-PROVIDER']/traffic-identification/using-networks\n&quot;,
-                    &quot;error-type&quot;: &quot;processing-error&quot;,
+                    &quot;error-type&quot;: &quot;uniconfig-error&quot;,
                     &quot;rollback-status&quot;: &quot;complete&quot;
                 },
                 {
@@ -543,7 +543,7 @@ confirmed commit and the submitted configuration (IOSXRN).</p>
                     &quot;node-id&quot;: &quot;IOSXRN&quot;,
                     &quot;configuration-status&quot;: &quot;fail&quot;,
                     &quot;error-message&quot;: &quot;RemoteDevice{IOSXRN}: time delay between confirmed and confirming commit was greater than 300 seconds, the configured changes were rolled back.\n&quot;,
-                    &quot;error-type&quot;: &quot;processing-error&quot;,
+                    &quot;error-type&quot;: &quot;uniconfig-error&quot;,
                     &quot;rollback-status&quot;: &quot;complete&quot;
                 },
                 {
@@ -589,7 +589,7 @@ of the commit. One node has failed due to improper configuration
                     &quot;node-id&quot;: &quot;IOSXRN&quot;,
                     &quot;configuration-status&quot;: &quot;fail&quot;,
                     &quot;error-message&quot;: &quot;Supplied value \&quot;GigabitEthernet0/0/0/1ghjfhjfhjfghj\&quot; does not match required pattern \&quot;^(([a-zA-Z0-9_]*\\d+/){3,4}\\d+)|(([a-zA-Z0-9_]*\\d+/){3,4}\\d+\\.\\d+)|(([a-zA-Z0-9_]*\\d+/){2}([a-zA-Z0-9_]*\\d+))|(([a-zA-Z0-9_]*\\d+/){2}([a-zA-Z0-9_]+))|([a-zA-Z0-9_-]*\\d+)|([a-zA-Z0-9_-]*\\d+\\.\\d+)|(mpls)|(dwdm)$\&quot;\n&quot;,
-                    &quot;error-type&quot;: &quot;processing-error&quot;,
+                    &quot;error-type&quot;: &quot;uniconfig-error&quot;,
                     &quot;rollback-status&quot;: &quot;complete&quot;
                 },
                 {
@@ -641,12 +641,12 @@ been mounted yet (AAA).</p>
                 {
                     &quot;node-id&quot;: &quot;IOSXRN&quot;,
                     &quot;configuration-status&quot;: &quot;fail&quot;,
-                    &quot;error-type&quot;: &quot;processing-error&quot;
+                    &quot;error-type&quot;: &quot;uniconfig-error&quot;
                 },
                 {
                     &quot;node-id&quot;: &quot;IOSXR&quot;,
                     &quot;configuration-status&quot;: &quot;fail&quot;,
-                    &quot;error-type&quot;: &quot;processing-error&quot;
+                    &quot;error-type&quot;: &quot;uniconfig-error&quot;
                 }
             ]
         }
@@ -691,7 +691,7 @@ of the commit. One node has failed due to improper configuration
                     &quot;node-id&quot;: &quot;IOSXRN&quot;,
                     &quot;configuration-status&quot;: &quot;fail&quot;,
                     &quot;error-message&quot;: &quot;Illegal value for key: (http://cisco.com/ns/yang/Cisco-IOS-XR-ifmgr-cfg?revision=2017-09-07)interface-name, in: (http://cisco.com/ns/yang/Cisco-IOS-XR-ifmgr-cfg?revision=2017-09-07)interface-configuration[{(http://cisco.com/ns/yang/Cisco-IOS-XR-ifmgr-cfg?revision=2017-09-07)active=act, (http://cisco.com/ns/yang/Cisco-IOS-XR-ifmgr-cfg?revision=2017-09-07)interface-name=GigabitEthernet0/0/0/3}], actual value: GigabitEthernet0/0/0/3/ddd, expected value from key: GigabitEthernet0/0/0/3\n&quot;,
-                    &quot;error-type&quot;: &quot;processing-error&quot;,
+                    &quot;error-type&quot;: &quot;uniconfig-error&quot;,
                     &quot;rollback-status&quot;: &quot;complete&quot;
                 }
             ]
@@ -850,6 +850,5 @@ touched nodes, the request will result in an error.</p>
         <div id="docs-overlay-target"></div>
 
         <script>window.__DOCS__ = { "title": "RPC commit", icon: "file", hasPrism: true, hasMermaid: false, hasMath: false }</script>
-        <script type="text/javascript">window.$crisp=[];window.CRISP_WEBSITE_ID="f4b74451-b2eb-4560-acd3-af512e0b29d1";(function(){d=document;s=d.createElement("script");s.src="https://client.crisp.chat/l.js";s.async=1;d.getElementsByTagName("head")[0].appendChild(s);})();</script>
     </body>
 </html>
