@@ -9,32 +9,32 @@
     <meta name="turbo-cache-control" content="no-cache">
 
     <!-- Primary Meta Tags -->
-    <title>Creating loopback Address and Retrieving Journals of Devices | Frinx Docs</title>
-    <meta name="title" content="Creating loopback Address and Retrieving Journals of Devices | Frinx Docs">
-    <meta name="description" content="This section shows how users can execute workflows to create loopback address on devices stored in the inventory." />
+    <title>Create loopback interfaces | Frinx Docs</title>
+    <meta name="title" content="Create loopback interfaces | Frinx Docs">
+    <meta name="description" content="This use-case discusses workflow Create_loopback_all_in_uniconfig." />
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://docs.frinx.io/frinx-machine/use-cases/create-loopback-and-read-journal/">
-    <meta property="og:title" content="Creating loopback Address and Retrieving Journals of Devices | Frinx Docs">
-    <meta property="og:description" content="This section shows how users can execute workflows to create loopback address on devices stored in the inventory.">
-    <meta property="og:image" content="https://docs.frinx.io/frinx-machine/use-cases/create-loopback-and-read-journal/loop-create.png">
+    <meta property="og:url" content="https://docs.frinx.io/frinx-machine/use-cases/create-loopbacks/">
+    <meta property="og:title" content="Create loopback interfaces | Frinx Docs">
+    <meta property="og:description" content="This use-case discusses workflow Create_loopback_all_in_uniconfig.">
+    <meta property="og:image" content="https://docs.frinx.io/frinx-machine/use-cases/create-loopbacks/loop-create.png">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://docs.frinx.io/frinx-machine/use-cases/create-loopback-and-read-journal/">
-    <meta property="twitter:title" content="Creating loopback Address and Retrieving Journals of Devices | Frinx Docs">
-    <meta property="twitter:description" content="This section shows how users can execute workflows to create loopback address on devices stored in the inventory.">
-    <meta property="twitter:image" content="https://docs.frinx.io/frinx-machine/use-cases/create-loopback-and-read-journal/loop-create.png">
+    <meta property="twitter:url" content="https://docs.frinx.io/frinx-machine/use-cases/create-loopbacks/">
+    <meta property="twitter:title" content="Create loopback interfaces | Frinx Docs">
+    <meta property="twitter:description" content="This use-case discusses workflow Create_loopback_all_in_uniconfig.">
+    <meta property="twitter:image" content="https://docs.frinx.io/frinx-machine/use-cases/create-loopbacks/loop-create.png">
     
     <script>(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
     <link href="/static/favicon-32x32.png" rel="icon" />
-    <link href="/resources/css/retype.css?v=1.11.2.698936700015" rel="stylesheet" data-turbo-track="reload" />
+    <link href="/resources/css/retype.css?v=1.11.2.700646671929" rel="stylesheet" data-turbo-track="reload" />
 
-    <script type="text/javascript" src="/resources/js/config.js?v=1.11.2.698936700015" defer data-turbo-track="reload"></script>
+    <script type="text/javascript" src="/resources/js/config.js?v=1.11.2.700646671929" defer data-turbo-track="reload"></script>
     <script type="text/javascript" src="/resources/js/retype.js?v=1.11.2" defer data-turbo-track="reload"></script>
-    <script id="lunr-js" type="text/javascript" src="/resources/js/lunr.js?v=1.11.2.698936700015" defer></script>
+    <script id="lunr-js" type="text/javascript" src="/resources/js/lunr.js?v=1.11.2.700646671929" defer></script>
 </head>
     <body>
         <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -231,14 +231,13 @@
                 <div id="docs-sidebar-right-toggle"></div>
                
                 <!-- Page content  -->
-<doc-anchor-target id="creating-loopback-address-and-retrieving-journals-of-devices" class="break-words">
+<doc-anchor-target id="create-loopback-interfaces" class="break-words">
     <h1>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#creating-loopback-address-and-retrieving-journals-of-devices">#</doc-anchor-trigger>
-        <span>Creating loopback Address and Retrieving Journals of Devices</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#create-loopback-interfaces">#</doc-anchor-trigger>
+        <span>Create loopback interfaces</span>
     </h1>
 </doc-anchor-target>
-<p>This section shows how users can execute workflows to create loopback
-address on devices stored in the inventory.</p>
+<p>This use-case discusses workflow <strong>Create_loopback_all_in_uniconfig</strong>. This workflow creates a loopback interface on all devices that are installed in the inventory.</p>
 <div class="flex mb-6">
     <div class="flex-shrink-0 w-1 rounded-tl rounded-bl bg-yellow-500"></div>
     <div class="flex w-full py-4 border border-l-0 border-gray-300 rounded-tr rounded-br doc-alert bg-white dark:bg-dark-700 dark:border-dark-700" role="alert">
@@ -252,18 +251,18 @@ address on devices stored in the inventory.</p>
         </div>
         <div class="pr-5 ml-3">
 <p>Make sure you didn&#x27;t skip
-mounting all devices in inventory otherwise this workflow might not work correctly.
+installing all devices from inventory otherwise this workflow might not work correctly.
 <div class="mb-6 px-5 py-4 flex justify-between relative border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded transition-colors duration-150">
     <div class="flex items-center text-blue-500 dark:text-blue-400">
         <span class="inline-block mb-px">
             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" role="presentation" fill="currentColor"><path fill="none" d="M0 0h24v24H0z"/><path d="M19.92 12.38a1 1 0 00-.22-1.09l-7-7a.996.996 0 10-1.41 1.41l5.3 5.3H5c-.55 0-1 .45-1 1s.45 1 1 1h11.59l-5.29 5.29a.996.996 0 000 1.41c.19.2.44.3.7.3s.51-.1.71-.29l7-7c.09-.09.16-.21.21-.33z"/></svg>
         </span>
-        <span class="inline-block font-medium ml-2">Mount all devices in inventory</span>
+        <span class="inline-block font-medium ml-2">Install all devices from inventory</span>
     </div>
     <div class="flex items-center text-xs text-gray-400 dark:text-dark-400">
-        <span>/frinx-machine/use-cases/mount-all-devices-in-inventory/</span>
+        <span>/frinx-machine/use-cases/install-all-devices-from-inventory/</span>
     </div>
-    <a href="/frinx-machine/use-cases/mount-all-devices-in-inventory/" class="absolute block inset-0"></a>
+    <a href="/frinx-machine/use-cases/install-all-devices-from-inventory/" class="absolute block inset-0"></a>
 </div>
 </p>
         </div>
@@ -272,7 +271,7 @@ mounting all devices in inventory otherwise this workflow might not work correct
 <doc-anchor-target id="create-loopback-address-on-devices-stored-in-the-inventory">
     <h2>
         <doc-anchor-trigger class="header-anchor-trigger" to="#create-loopback-address-on-devices-stored-in-the-inventory">#</doc-anchor-trigger>
-        <span>Create loopback Address on Devices Stored in the Inventory</span>
+        <span>Create loopback address on devices stored in the inventory</span>
     </h2>
 </doc-anchor-target>
 <div class="flex mb-6">
@@ -287,80 +286,69 @@ mounting all devices in inventory otherwise this workflow might not work correct
             </svg>
         </div>
         <div class="pr-5 ml-3">
-<p>This use case does not work with &quot;VRP01&quot; and &quot;netconf-testtool&quot; devices.
-Because of that, before executing other workflows, you need to unmount
-the &quot;VRP01&quot; and &quot;netconf-testtool&quot; devices that were previously
-mounted by the <strong>Mount_all_from_inventory</strong> workflow. In order to
-unmount these devices, go to <code v-pre>Home</code> --&gt; <code v-pre>UniConfig</code> select the &quot;VRP01&quot;
-and &quot;netconf-testtool&quot; device and click &quot;Unmount Devices&quot;.</p>
+<p>By default, this workflow doesn&#x27;t work on Junos, <strong>IOSXR653</strong>, <strong>IOSXR663</strong> and <strong>SAOS8</strong> devices. This is because we are sending the data to the &quot;frinx-openconfig-interfaces&quot; model, which either isn&#x27;t present on those devices or its structure differs from other devices we write to. If you want to write data to those devices, you will have to edit the <strong>Create_loopback_all_in_uniconfig</strong> workflow. In this case, we successfully write to <strong>IOS</strong>, <strong>XR</strong>, <strong>VRP</strong>, <strong>SAOS6</strong>, <strong>Leaf</strong>, <strong>Spine</strong>.</p>
         </div>
     </div>
 </div>
-<p>In the next step we will execute a workflow that creates loopback on
-every mounted device in UniConfig (the devices were previously mounted
-from inventory).</p>
-<p>Click on <code v-pre>Home</code> --&gt; <code v-pre>Workflows</code> --&gt; <code v-pre>Definitions</code> and search for the
-workflow <strong>Create_loopback_all_in_uniconfig</strong>.</p>
-<p>After providing the loopback id to be used, you can execute the
-workflow. As previously, click on the popped up numeric link next to the
-execute button.</p>
+<p>In the next step, we execute a workflow that creates loopback on
+every installed device in UniConfig.</p>
+<p>In the <code v-pre>UniFlow</code> section, click on the <code v-pre>Explore</code> button. A list of all workflows will appear. Search for a workflow called <strong>Create_loopback_all_in_uniconfig</strong>.</p>
+<p>As for the input, the only thing you need to input is &quot;loopback_id&quot;, the name of the loopback interface e.g., <strong>77</strong>.
+After executing, click on the numeric link that appears to see workflow progression and results.</p>
 <p><figure class="content-center">
     <img src="loop-create.png" alt="Executed workflows" />
     <figcaption class="caption">Executed workflows</figcaption>
 </figure>
 </p>
-<p>The workflow creates a loopback for all devices in the inventory. Here
-you see all the devices.</p>
+<p>On the results page you will see 5 individual tasks:</p>
+<doc-anchor-target id="inventory_get_all_devices_as_dynamic_fork_tasks">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#inventory_get_all_devices_as_dynamic_fork_tasks">#</doc-anchor-trigger>
+        <span>INVENTORY_get_all_devices_as_dynamic_fork_tasks</span>
+    </h3>
+</doc-anchor-target>
+<p>This workflow displays the list of all nodes in the inventory. It parses the output in the correct format for the dynamic fork, which creates a dynamic amount of tasks, depending on the number of devices in the inventory. It allows us to use one task, disregarding the state of the inventory.</p>
+<doc-anchor-target id="sub_workflow">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#sub_workflow">#</doc-anchor-trigger>
+        <span>SUB_WORKFLOW</span>
+    </h3>
+</doc-anchor-target>
+<p>This is the dynamic fork sub-workflow. In this case, it creates <strong>UNICONFIG_write_structured_device_data</strong> for every individual device in the inventory. Thanks to this, you get detailed information on the progress and succession of every device.</p>
+<doc-anchor-target id="uniconfig_calculate_diff">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#uniconfig_calculate_diff">#</doc-anchor-trigger>
+        <span>UNICONFIG_calculate_diff</span>
+    </h3>
+</doc-anchor-target>
+<p>This RPC creates a diff between the actual UniConfig topology nodes and the intended UniConfig topology nodes. Find full details about calculate diff <a href="/frinx-uniconfig/user-guide/uniconfig-operations/uniconfig-node-manager/rpc_calculate-diff/#rpc-calculate-diff">here</a></p>
+<doc-anchor-target id="uniconfig_dryrun_commit">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#uniconfig_dryrun_commit">#</doc-anchor-trigger>
+        <span>UNICONFIG_dryrun_commit</span>
+    </h3>
+</doc-anchor-target>
+<p>The RPC will resolve the diff between the actual and intended configuration of nodes by using UniConfig Node Manager. Changes for CLI nodes are applied by using cli-dryrun mountpoint which only stores translated CLI commands to the cli-dry-run journal. After all, changes are applied, the cli-dryrun journal is read and an RPC output is created and returned. Find full details about dryrun commit <a href="/frinx-uniconfig/user-guide/uniconfig-operations/dryrun-manager/#rpc-dryrun-commit">here</a></p>
+<doc-anchor-target id="uniconfig_commit">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#uniconfig_commit">#</doc-anchor-trigger>
+        <span>UNICONFIG_commit</span>
+    </h3>
+</doc-anchor-target>
+<p>This is the final task that actually commits the intended configuration to the devices. Find full details about commit <a href="/frinx-uniconfig/user-guide/uniconfig-operations/uniconfig-node-manager/rpc_commit/#rpc-commit">here</a></p>
 <p><figure class="content-center">
-    <img src="loop-output.png" alt="Workflows detail" />
-    <figcaption class="caption">Workflows detail</figcaption>
+    <img src="loop-output.png" alt="Workflows details" />
+    <figcaption class="caption">Workflows details</figcaption>
 </figure>
 </p>
 <p><figure class="content-center">
-    <img src="loop-dynamicfork.png" alt="Workflow Dynamic Fork" />
-    <figcaption class="caption">Workflow Dynamic Fork</figcaption>
+    <img src="loop-dynamicfork.png" alt="Dynamic Fork details" />
+    <figcaption class="caption">Dynamic Fork details</figcaption>
 </figure>
 </p>
-<p>After the main and sub-workflows have completed successfully the
-loopback address was created on the devices. Since we are working with
-emulated devices, we can check a device journal to see if it was really
-created.</p>
+<p>If the workflow has been completed successfully, a loopback interface is now present on all devices in the inventory.</p>
 <p>The execution of all workflows can be manual, via the UI, or can be
 automated and scheduled via the REST API of conductor server.</p>
-<doc-anchor-target id="running-the-workflow-for-retrieving-the-journal-of-a-device">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#running-the-workflow-for-retrieving-the-journal-of-a-device">#</doc-anchor-trigger>
-        <span>Running the workflow for retrieving the journal of a device</span>
-    </h2>
-</doc-anchor-target>
-<p>In this section we show how to run the workflow for retrieving the
-journal of a device.</p>
-<p>Click on: <code v-pre>Home</code> --&gt; <code v-pre>Workflows</code> --&gt; <code v-pre>Definitions</code> and search for <strong>Read_journal_cli_device</strong>.</p>
-<p><figure class="content-center">
-    <img src="loop-journalsearch.png" alt="Journal Search" />
-    <figcaption class="caption">Journal Search</figcaption>
-</figure>
-</p>
-<p>After providing the device id(you need to specify the id under you
-mounted the device), you can execute the workflow.</p>
-<p><figure class="content-center">
-    <img src="loop-journalexecute.png" alt="Journal Execute" />
-    <figcaption class="caption">Journal Execute</figcaption>
-</figure>
-</p>
-<p>Under <code v-pre>Home</code> --&gt; <code v-pre>Workflows</code> --&gt; <code v-pre>Executed</code> click the ID of the previously
-executed workflow to see the progress of the workflow. Input/output data
-of each task and statistics associated with the workflow execution can
-all be found here.</p>
-<p>The journal information can be found in the output of the workflow.
-Click <code v-pre>Execution Flow</code> and click on the green box with the
-<strong>CLI_get_cli_journal</strong> text. To transform to a readable format,
-click the unescape button.</p>
-<p><figure class="content-center">
-    <img src="loop-journaloutput.png" alt="Journal JSON" />
-    <figcaption class="caption">Journal JSON</figcaption>
-</figure>
-</p>
 
 
 
@@ -372,20 +360,20 @@ click the unescape button.</p>
             
 <nav class="flex mt-14">
     <div class="w-1/2">
-        <a class="px-5 py-4 h-full flex items-center break-all md:break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-l-lg transition-colors duration-150 relative hover:z-5" href="/frinx-machine/use-cases/create-l2-vpn-p2p/">
+        <a class="px-5 py-4 h-full flex items-center break-all md:break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-l-lg transition-colors duration-150 relative hover:z-5" href="/frinx-machine/use-cases/add-to-inventory-and-install/">
             <svg xmlns="http://www.w3.org/2000/svg" class="mr-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19 11H7.41l5.29-5.29a.996.996 0 10-1.41-1.41l-7 7a1 1 0 000 1.42l7 7a1.024 1.024 0 001.42-.01.996.996 0 000-1.41L7.41 13H19c.55 0 1-.45 1-1s-.45-1-1-1z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
             <span>
                 <span class="block text-xs font-normal text-gray-400 dark:text-dark-400">Previous</span>
-                <span class="block mt-1">Creating a Layer 2 VPN Point-to-Point Connection</span>
+                <span class="block mt-1">Add a device to inventory and install it</span>
             </span>
         </a>
     </div>
 
     <div class="w-1/2">
-        <a class="px-5 py-4 -mx-px h-full flex items-center justify-end break-all md:break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-r-lg transition-colors duration-150 relative hover:z-5" href="/frinx-machine/use-cases/mount-all-devices-in-inventory/">
+        <a class="px-5 py-4 -mx-px h-full flex items-center justify-end break-all md:break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-r-lg transition-colors duration-150 relative hover:z-5" href="/frinx-machine/use-cases/create-l2-vpn-p2p/">
             <span>
                 <span class="block text-xs font-normal text-right text-gray-400 dark:text-dark-400">Next</span>
-                <span class="block mt-1">Mount all devices in inventory</span>
+                <span class="block mt-1">Creating a Layer 2 VPN Point-to-Point Connection</span>
             </span>
             <svg xmlns="http://www.w3.org/2000/svg" class="ml-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19.92 12.38a1 1 0 00-.22-1.09l-7-7a.996.996 0 10-1.41 1.41l5.3 5.3H5c-.55 0-1 .45-1 1s.45 1 1 1h11.59l-5.29 5.29a.996.996 0 000 1.41c.19.2.44.3.7.3s.51-.1.71-.29l7-7c.09-.09.16-.21.21-.33z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
         </a>
@@ -436,6 +424,6 @@ click the unescape button.</p>
 
         <div id="docs-overlay-target"></div>
 
-        <script>window.__DOCS__ = { "title": "Creating loopback Address and Retrieving Journals of Devices", icon: "file", hasPrism: false, hasMermaid: false, hasMath: false }</script>
+        <script>window.__DOCS__ = { "title": "Create loopback interfaces", icon: "file", hasPrism: false, hasMermaid: false, hasMath: false }</script>
     </body>
 </html>

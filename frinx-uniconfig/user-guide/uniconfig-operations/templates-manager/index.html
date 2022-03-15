@@ -30,12 +30,12 @@
     <script>(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
     <link href="/static/favicon-32x32.png" rel="icon" />
-    <link href="/resources/css/retype.css?v=1.11.2.698936700015" rel="stylesheet" data-turbo-track="reload" />
+    <link href="/resources/css/retype.css?v=1.11.2.700646671929" rel="stylesheet" data-turbo-track="reload" />
 
-    <script type="text/javascript" src="/resources/js/config.js?v=1.11.2.698936700015" defer data-turbo-track="reload"></script>
+    <script type="text/javascript" src="/resources/js/config.js?v=1.11.2.700646671929" defer data-turbo-track="reload"></script>
     <script type="text/javascript" src="/resources/js/retype.js?v=1.11.2" defer data-turbo-track="reload"></script>
-    <script id="lunr-js" type="text/javascript" src="/resources/js/lunr.js?v=1.11.2.698936700015" defer></script>
-    <script id="prism-js" type="text/javascript" src="/resources/js/prism.js?v=1.11.2.698936700015" defer></script>
+    <script id="lunr-js" type="text/javascript" src="/resources/js/lunr.js?v=1.11.2.700646671929" defer></script>
+    <script id="prism-js" type="text/javascript" src="/resources/js/prism.js?v=1.11.2.700646671929" defer></script>
 </head>
     <body>
         <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -949,6 +949,57 @@ PLAIN-PATCH RESTCONF method.</p>
         }
     }
 }</code></pre>
+</doc-codeblock></div>
+<doc-anchor-target id="upgrading-template-to-latest-yang-repository">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#upgrading-template-to-latest-yang-repository">#</doc-anchor-trigger>
+        <span>Upgrading template to latest yang repository</span>
+    </h2>
+</doc-anchor-target>
+<p>Template can be upgraded to latest YANG repository using &#x27;upgrade-template&#x27; RPC.
+This procedure consists of:</p>
+<ol>
+<li><strong>Read template</strong> - Reading of template configuration from
+&#x27;templates&#x27; topology in Configuration datastore.</li>
+<li><strong>Version-drop</strong> - Conversion of template into target schema context
+that is created by specified yang-repository. Because of this feature, it is
+possible to change template between different versions of devices
+with different revisions of YANG schemas but with similar structure.
+Version-drop is also aware of &#x27;ignoredDataOnWriteByExtensions&#x27;
+RESTCONF filtering mechanism.</li>
+<li><strong>Removal of previous template / writing new template</strong> - If
+&#x27;upgraded-template-name&#x27; is not specified in RPC input,
+previous template will be deleted and replaced by new one.
+If it is specified, previous template will not be deleted.</li>
+</ol>
+<p>Description of input RPC fields:</p>
+<ul>
+<li><strong>template-name</strong>: Name of the existing input template. This field is mandatory.</li>
+<li><strong>upgraded-template-name</strong>: Name of upgraded/new template. This field is optional.</li>
+<li><strong>yang-repository</strong>: Name of YANG repository against
+which version-dropping is used. This field is optional.
+If no yang-repository is specified, latest yang repository will be used.</li>
+</ul>
+<p>Description of fields in RPC response:</p>
+<p>No fields are used, only HTTP response codes [200 - OK, 404 - Fail]</p>
+<doc-anchor-target id="usage-of-rpc-1">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#usage-of-rpc-1">#</doc-anchor-trigger>
+        <span>Usage of RPC</span>
+    </h3>
+</doc-anchor-target>
+<div class="codeblock-wrapper"><doc-codeblock>
+<div class="codeblock-title">RPC Request</div>
+<pre class="language-bash"><code v-pre class="language-bash">curl --location --request POST 'http://localhost:8181/rests/operations/template-manager:upgrade-template' \
+--header 'Accept: application/json' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+    &quot;input&quot;: {
+        &quot;template-name&quot;: &quot;interface_template&quot;,
+        &quot;upgraded-template-name&quot;: &quot;new_interface_template&quot;,
+        &quot;yang-repository&quot;: &quot;schema1&quot;
+    }
+}'</code></pre>
 </doc-codeblock></div>
 <doc-anchor-target id="application-of-template">
     <h2>

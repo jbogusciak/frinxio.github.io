@@ -30,11 +30,11 @@
     <script>(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
     <link href="/static/favicon-32x32.png" rel="icon" />
-    <link href="/resources/css/retype.css?v=1.11.2.698936700015" rel="stylesheet" data-turbo-track="reload" />
+    <link href="/resources/css/retype.css?v=1.11.2.700646671929" rel="stylesheet" data-turbo-track="reload" />
 
-    <script type="text/javascript" src="/resources/js/config.js?v=1.11.2.698936700015" defer data-turbo-track="reload"></script>
+    <script type="text/javascript" src="/resources/js/config.js?v=1.11.2.700646671929" defer data-turbo-track="reload"></script>
     <script type="text/javascript" src="/resources/js/retype.js?v=1.11.2" defer data-turbo-track="reload"></script>
-    <script id="lunr-js" type="text/javascript" src="/resources/js/lunr.js?v=1.11.2.698936700015" defer></script>
+    <script id="lunr-js" type="text/javascript" src="/resources/js/lunr.js?v=1.11.2.700646671929" defer></script>
 </head>
     <body>
         <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -353,6 +353,30 @@ resource claim request)</li>
 subnet</li>
 <li>In general, anything that a user might need</li>
 </ul>
+<doc-anchor-target id="nested-pool">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#nested-pool">#</doc-anchor-trigger>
+        <span>Nested pool</span>
+    </h2>
+</doc-anchor-target>
+<p>UniResource allows to create nested pools. Nested pools provide possibility to create subgroups from already existing pools. With these subgroups it is easier to reason about topology.</p>
+<doc-anchor-target id="how-to-create-nested-pool">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#how-to-create-nested-pool">#</doc-anchor-trigger>
+        <span>How to create nested pool</span>
+    </h3>
+</doc-anchor-target>
+<p>Process (in UI):</p>
+<ul>
+<li>Create pool or open existing one</li>
+<li>Allocate resource in newly created or existing pool</li>
+<li>Open <strong>create pool</strong> page</li>
+<li>Select parent from which nested pool should be created</li>
+<li>Select allocated resource of parent from which nested pool will be taking resources</li>
+<li>Fill other mandatory inputs</li>
+<li>Push button to create nested pool</li>
+</ul>
+<p>After successful submit newly created nested pool should be visible in pools list or in nested pools list in its parent detail page. Also it is possible to create nested pool from detail page of pool.</p>
 <doc-anchor-target id="allocation-strategy-overview">
     <h2>
         <doc-anchor-trigger class="header-anchor-trigger" to="#allocation-strategy-overview">#</doc-anchor-trigger>

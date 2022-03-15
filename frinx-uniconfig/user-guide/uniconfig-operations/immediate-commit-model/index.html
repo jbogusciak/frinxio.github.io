@@ -30,12 +30,12 @@
     <script>(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
     <link href="/static/favicon-32x32.png" rel="icon" />
-    <link href="/resources/css/retype.css?v=1.11.2.698936700015" rel="stylesheet" data-turbo-track="reload" />
+    <link href="/resources/css/retype.css?v=1.11.2.700646671929" rel="stylesheet" data-turbo-track="reload" />
 
-    <script type="text/javascript" src="/resources/js/config.js?v=1.11.2.698936700015" defer data-turbo-track="reload"></script>
+    <script type="text/javascript" src="/resources/js/config.js?v=1.11.2.700646671929" defer data-turbo-track="reload"></script>
     <script type="text/javascript" src="/resources/js/retype.js?v=1.11.2" defer data-turbo-track="reload"></script>
-    <script id="lunr-js" type="text/javascript" src="/resources/js/lunr.js?v=1.11.2.698936700015" defer></script>
-    <script id="prism-js" type="text/javascript" src="/resources/js/prism.js?v=1.11.2.698936700015" defer></script>
+    <script id="lunr-js" type="text/javascript" src="/resources/js/lunr.js?v=1.11.2.700646671929" defer></script>
+    <script id="prism-js" type="text/javascript" src="/resources/js/prism.js?v=1.11.2.700646671929" defer></script>
 </head>
     <body>
         <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -260,6 +260,34 @@ is an additional call of the commit RPC. This commit ensures that the
 transaction is closed. For reading data, it is necessary to close the
 transaction differently, because no data were changed, so calling a
 commit would be unnecessary.</p>
+<p>When calling the &#x27;sync-from-network&#x27; RPC, it internally calls
+&#x27;replace-config-with-operational&#x27;. Note that this only works when
+using the Immediate Commit Model.</p>
+<doc-anchor-target id="configuration">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#configuration">#</doc-anchor-trigger>
+        <span>Configuration</span>
+    </h2>
+</doc-anchor-target>
+<p>Configuration related to UniConfig transactions is placed in the
+&#x27;config/lighty-uniconfig-config.json&#x27; file under &#x27;transactions&#x27;
+container.
+A user can turn off the Immediate Commit Model and use only the
+<a href="../build-and-commit-model/">Build and Commit Model</a>
+instead.</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<div class="codeblock-title">JSON Snippet</div>
+<pre class="language-json"><code v-pre class="language-json">&quot;transactions&quot;: {
+        .
+        .
+        .
+        /*
+        Boolean value if the Immediate Commit Model is enabled or not. Default value is true.
+        If disabled, only manually created transactions can exist.
+        */
+        &quot;isImmediateCommitEnabled&quot;: true
+    }</code></pre>
+</doc-codeblock></div>
 <doc-anchor-target id="rpc-examples">
     <h2>
         <doc-anchor-trigger class="header-anchor-trigger" to="#rpc-examples">#</doc-anchor-trigger>

@@ -30,12 +30,12 @@
     <script>(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
     <link href="/static/favicon-32x32.png" rel="icon" />
-    <link href="/resources/css/retype.css?v=1.11.2.698936700015" rel="stylesheet" data-turbo-track="reload" />
+    <link href="/resources/css/retype.css?v=1.11.2.700646671929" rel="stylesheet" data-turbo-track="reload" />
 
-    <script type="text/javascript" src="/resources/js/config.js?v=1.11.2.698936700015" defer data-turbo-track="reload"></script>
+    <script type="text/javascript" src="/resources/js/config.js?v=1.11.2.700646671929" defer data-turbo-track="reload"></script>
     <script type="text/javascript" src="/resources/js/retype.js?v=1.11.2" defer data-turbo-track="reload"></script>
-    <script id="lunr-js" type="text/javascript" src="/resources/js/lunr.js?v=1.11.2.698936700015" defer></script>
-    <script id="prism-js" type="text/javascript" src="/resources/js/prism.js?v=1.11.2.698936700015" defer></script>
+    <script id="lunr-js" type="text/javascript" src="/resources/js/lunr.js?v=1.11.2.700646671929" defer></script>
+    <script id="prism-js" type="text/javascript" src="/resources/js/prism.js?v=1.11.2.700646671929" defer></script>
 </head>
     <body>
         <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -254,6 +254,7 @@ Currently, there are these types of notifications:</p>
 <li>notifications about transactions</li>
 <li>audit logs (RESTCONF notifications)</li>
 <li>data-change-events</li>
+<li>connection notifications</li>
 </ul>
 <p>Each type of notifications is stored in its own topic in kafka. Besides
 that, all notifications are stored in one table in database.</p>
@@ -402,6 +403,31 @@ represents created data.</li>
 <li>data-after: JSON representation of subtree data including done changes. If this fields is not present, then
 &#x27;data-before&#x27; represents removed data.</li>
 </ul>
+<doc-anchor-target id="connection-notifications">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#connection-notifications">#</doc-anchor-trigger>
+        <span>Connection notifications</span>
+    </h2>
+</doc-anchor-target>
+<p>Connection notification are generated whenever status of some node changes.
+For connection notifications, streamName is always &#x27;CONNECTION&#x27; and identifier of YANG notification is &#x27;connection-notification&#x27;.</p>
+<p>It contains:</p>
+<ul>
+<li>topology id</li>
+<li>node id</li>
+<li>connection status</li>
+<li>connection message</li>
+</ul>
+<p>Supported topologies are cli, netconf and gnmi.</p>
+<p>Sample connection notifications captured by Kafka console consumer:</p>
+<p><strong>CLI disconnect notification:</strong></p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-json"><code v-pre class="language-json">{&quot;eventTime&quot;:&quot;2022-02-17T10:09:28.76615-00:00&quot;,&quot;nodeId&quot;:&quot;UC-5b4d0cec-6493-4e3d-bd1c-348a3ce83600&quot;,&quot;streamName&quot;:&quot;CONNECTION&quot;,&quot;identifier&quot;:&quot;connection-notification&quot;,&quot;body&quot;:{&quot;connection-status&quot;:&quot;disconnected&quot;,&quot;node-id&quot;:&quot;R1&quot;,&quot;connection-message&quot;:&quot;&quot;,&quot;topology&quot;:&quot;cli&quot;}}</code></pre>
+</doc-codeblock></div>
+<p><strong>NETCONF connect notification:</strong></p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-json"><code v-pre class="language-json">{&quot;eventTime&quot;:&quot;2022-02-17T10:09:51.41777-00:00&quot;,&quot;nodeId&quot;:&quot;UC-5b4d0cec-6493-4e3d-bd1c-348a3ce83600&quot;,&quot;streamName&quot;:&quot;CONNECTION&quot;,&quot;identifier&quot;:&quot;connection-notification&quot;,&quot;body&quot;:{&quot;connection-status&quot;:&quot;connecting&quot;,&quot;node-id&quot;:&quot;R2&quot;,&quot;connection-message&quot;:&quot;Connecting&quot;,&quot;topology&quot;:&quot;topology-netconf&quot;}}</code></pre>
+</doc-codeblock></div>
 <doc-anchor-target id="database-entities">
     <h2>
         <doc-anchor-trigger class="header-anchor-trigger" to="#database-entities">#</doc-anchor-trigger>
