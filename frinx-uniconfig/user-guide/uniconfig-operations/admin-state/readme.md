@@ -45,6 +45,20 @@ curl --location --request POST 'http://localhost:8181/rests/operations/connectio
 }
 ```
 
+## RPC Example
+
+GET request to get the actual state of the device.
+
+```bash RPC Request
+curl --location --request GET 'http://localhost:8181/rests/data/network-topology:network-topology/topology=topology-netconf/node=vnf20/uniconfig-config:admin-state' \
+--header 'Authorization: Basic YWRtaW46e3twYXNzd29yZH19'
+```
+```json RPC Response, Status: 200
+{
+    "uniconfig-config:admin-state": "unlocked"
+}
+```
+
 # RPC Failed Example
 
 Device is in **locked** admin-state and the user tries to modify data on the device.
