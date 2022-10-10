@@ -13,6 +13,16 @@ $['container']['list'][0]['element']
 
 ### Jsonb-filter expression
 
+Every filter operation is sent using a POST request. Additionally, a new Content-Type header has
+been made for application JSONB Filtering. An example can be seen below:
+```
+curl --location --request POST 'http://localhost:8181/rests/data/network-topology:network-topology/topology=uniconfig/node=SampleNodeName/frinx-uniconfig-topology:configuration' \
+--header 'Content-Type: application/filter-data+json' \
+--data-raw '{
+    "query": "$.frinx-uniconfig-topology:configuration"
+}'
+```
+
 The filter is located in the body of the request, not in the URI. Since it is located in the body, 
 there is no need to escape characters. The body structure looks like this:
 
