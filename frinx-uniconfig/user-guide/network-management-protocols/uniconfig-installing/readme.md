@@ -525,6 +525,12 @@ uniconfig-native support.
     confirmed-commit RPC should be used before submitting configuration
     of node. By default, this flag is set to 'true'. This parameter has
     effect only on NETCONF nodes.
+- **uniconfig-config:store-failed-installation** - Whether the installation
+    should be stored in the database if it fails (e.g. is unreachable).
+    The node will be 'installed' even though it failed and the user has 2 options:
+  - uninstall the device and reinstall it.
+  - call sync-from-network to sync the data from the device.
+
 
 ### Flags
 Non-mandatory flag parameters that can be added to mount-request.
