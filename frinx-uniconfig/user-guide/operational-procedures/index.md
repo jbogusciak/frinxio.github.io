@@ -3,7 +3,7 @@
 ## Logging
 
 UniConfig distribution uses Logback as the implementation of the logging
-framework. Logback is the successor to to the log4j framework with many
+framework. Logback is the successor to the log4j framework with many
 improvements such as more options for configuration, better performance,
 and context-based separation of logs. Context-based separation of logs
 is used widely in UniConfig to achieve per-device logging based on the
@@ -48,3 +48,10 @@ UniConfig stateless architecture allows deployment of the system in cluster in o
 horizontal scalability and high availability properties.
 
 [!ref text="UniConfig Clustering"](../operational-procedures/uniconfig-clustering)
+
+## Thread pools
+
+UniConfig uses thread pools in various places and they are available to configure in the
+application.properties file.
+
+[!ref text ="Thread pools"](../operational-procedures/thread-pools)
