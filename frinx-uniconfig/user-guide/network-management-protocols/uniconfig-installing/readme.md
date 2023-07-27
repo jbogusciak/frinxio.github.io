@@ -217,6 +217,25 @@ None of these parameters are mandatory (default values will be used).
     (default value: 1). `max-reconnection-attempts` is not that necessary to set. Uniconfig does
     not keep idle sessions open longer than it is necessary.
 
+### Storing failed installations
+
+The following parameter allows the user to store the installation in case the device is in some way unreachable.
+
+- **uniconfig-config:store-failed-installation** - If enabled, it will ensure that even if the device is unreachable, 
+    it will be stored in the node table in the database. If not set, the default value is false.
+
+When the user sets the flag to true, an additional column called **installation-status** will be populated with a boolean 
+flag (either **SUCCESSFUL** for a successful installation, or **FAILED** for a failed one). This lets the user know that 
+there has been some problem and that the device was not installed correctly. The mount-point information of that node 
+will be stored (unlike with the default value). With this info already stored, the user does not need to reinstall the 
+device, as all the connection information is present in the UniConfig database. Syncing the device or calling a GET 
+Request will try to reconnect to the device and if it is successful, the configuration data will be saved in the 
+datastore and the request will then finish. The **installation-status** will then change to **SUCCESSFUL**. The installed device 
+will then behave normally as if the installation was successful in the first place. If the device is still unreachable, 
+the flag will stay **FAILED**. 
+
+This is useful when many devices are being installed in batches and the user doesn't know if they are up or not.
+
 ### Keepalive strategies
 
 **1. Keepalive reconnection strategy**
